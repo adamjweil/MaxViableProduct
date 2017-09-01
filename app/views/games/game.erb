@@ -1,0 +1,10 @@
+<div class="game">
+  <h1><%= @deck.title %></h1>
+  <p><%= @flashcard.question %></p>
+  <form method="<% (@flashcard.answer == params[:answer]) ? @flashcard.correct : @flashcard.wrong %>">
+    <input type="hidden" name="guess[flashcard]" value="<%= @flashcard.id %>">
+    <label for="">Enter your guess:</label><br> 
+    <input type="text" name="guess[answer]"> 
+    <input type="submit" value="Enter">
+  </form>
+</div>
