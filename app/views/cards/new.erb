@@ -1,0 +1,13 @@
+<div class="new_cards">
+  <h1>Add Cards to Deck</h1>
+  <form action="/cards" method="POST">
+    <label for="question">Question:</label>
+    <input type="text" name="flashcard[question]" placeholder="Question">
+
+    <label for="question">Answer:</label>
+    <input type="text" name="flashcard[answer]" placeholder="Answer">
+    <input type="hidden" name="flashcard[deck_id]" value="<%= @deck.id %>">
+      <input type="submit" value="Submit">
+      <a href="/decks">Done</a>
+  </form>
+</div>
