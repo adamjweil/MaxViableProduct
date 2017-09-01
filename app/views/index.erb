@@ -2,9 +2,17 @@
 
 <main role="main">
 <ul class="decks">
+  <% if logged_in? %>
+  <% current_user %>
   <% @decks.each do |deck| %>
-    <li class="deck-link"><a href="<%= "/game/decks/#{deck.id}" %>"><%= deck.title %></a></li>
-  </li>
+    <!-- <li class="deck-link"><a href="<%= "/games/#{deck.id}" %>"><%= deck.title %></a></li> -->
+    <form action="/games" method="post">
+    <input type="hidden" name="game[deck_id]" value="<%= deck.id %>"/>
+    <input type="hidden" name="game[user_id]" value="<%= current_user.id %>"/>
+      <input type="submit" value="<%= deck.title %>">
+    </form>
+    </li>
+  <% end %>
   <% end %>
 </ul>
 </main>
