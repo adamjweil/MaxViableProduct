@@ -1,1 +1,10 @@
-<h1>Hello World</h1>
+<h1>Flashcards R Us</h1>
+
+<main role="main">
+<ul class="decks">
+  <% @decks.each do |deck| %>
+    <li class="deck-link"><a href="<%= "deck/#{deck.id}" %>"><%= deck.title %></a></li>
+  </li>
+  <% end %>
+</ul>
+</main>
