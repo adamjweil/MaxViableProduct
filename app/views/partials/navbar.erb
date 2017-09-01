@@ -7,15 +7,12 @@
         <% find_user %>
             <li><a href="/">Home</a></li>
             <li><a href="/users/">Profile</a></li>
+            <li><a href="/decks/new">New Deck</a></li>
             <li><a href="/logout">Logout</a></li>
           <% else %>
             <li><a href="/">Home</a></li>
             <li><a href="/users/new">Register</a></li>
-          <form class="navbar-search pull-right"  method="/sesions" action="POST">
-              <input type="text" class="span2" name="user[email]" placeholder="Email">
-              <input type="text" class="span2" name="user[password]"placeholder="Password">
-              <input type="submit" value="Login" class="btn"/>
-          </form>
+            <li><a href="/sessions/new">Log In</a></li> 
           <% end %>
         </ul>
        </div>
