@@ -16,3 +16,8 @@ post '/cards' do
   @deck = Deck.find_by(id: params[:id])
   redirect "/decks/#{@deck.id}/cards/new"
 end
+
+# get '/decks/:id' do
+#   @deck = Deck.find_by(id: params[:id])
+#   erb :'games/show'
+# end

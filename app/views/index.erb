@@ -3,7 +3,7 @@
 <main role="main">
 <ul class="decks">
   <% @decks.each do |deck| %>
-    <li class="deck-link"><a href="<%= "deck/#{deck.id}" %>"><%= deck.title %></a></li>
+    <li class="deck-link"><a href="<%= "decks/#{deck.id}" %>"><%= deck.title %></a></li>
   </li>
   <% end %>
 </ul>
