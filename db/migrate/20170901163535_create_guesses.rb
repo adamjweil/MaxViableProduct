@@ -3,7 +3,8 @@ class CreateGuesses < ActiveRecord::Migration[5.0]
     create_table :guesses do |t|
       t.integer :game_id, foreign_key: :true, null: false
       t.integer :card_id, foreign_key: :true, null: false
-      t.integer :is_correct, null: false
+      t.string :guessed_answer, null: false
+      t.boolean :is_correct
 
       t.timestamps
     end
