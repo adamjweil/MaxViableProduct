@@ -1,0 +1,30 @@
+<strong><p>The question was:</p></strong>
+<div id="question">
+  <span>
+    <%= @card.question %>
+  </span>
+</div>
+
+<div>
+<p>Your answer was:  <strong><%= @guess.guessed_answer %></p></strong>
+</div>
+
+<div>
+<p>The correct answer was:  <strong><%= @flashcard.answer %></p></strong>
+</div>
+
+<div>
+  <span>
+    <%= answer_feedback %>
+  </span>
+</div>
+
+<div>
+  <span>
+    <% if questions_left? %>
+      <a href="/guess/new">Next Guess</a>
+    <% else %>
+      <a href="/game/stats">Game over</a>
+    <% end %>
+  </span>
+</div>

@@ -16,10 +16,33 @@ post '/games/:id' do
   end
 end
 
-post '/games' do
-  @game = Game.create(params[:game])
-  redirect "/games/#{@game.id}"
+post '/deck/:deck_id/game' do
+  create_game
+  redirect '/guess/new'
 end
+
+get '/guess/new' do
+  find_user
+  find_game
+  draw_card
+  questions_left? ? (erb :'guesses/new') : (redirect '/game/stats')
+end
+
+post '/guess/card/:card_id' do
+  @guess = create_guess
+  redirect "/card/#{params[:card_id]}/guess/#{@guess.id}"
+end
+
+get '/card/:card_id/guess/:guess_id' do
+  find_card
+  find_guess
+  find_game
+  erb :'cards/show'
+end
+# post '/games' do
+#   @game = Game.create(params[:game])
+#   redirect "/games/#{@game.id}"
+# end
 
 get '/guesses' do
   @count = Guess.where('is_correct=?',0).count
