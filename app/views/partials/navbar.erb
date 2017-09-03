@@ -6,7 +6,7 @@
         <% if logged_in? %>
         <% find_user %>
             <li><a href="/">Home</a></li>
-            <li><a href="/users/">Profile</a></li>
+            <li><a href="/users/#{params[id]}">Profile</a></li>
             <li><a href="/decks/new">New Deck</a></li>
             <li><a href="/logout">Logout</a></li>
           <% else %>

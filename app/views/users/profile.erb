@@ -1,0 +1,11 @@
+<body>
+  <h1>Profile</h1> 
+  <section id="games">
+    <ul class="decks">
+      <% current_user %>
+      <% @decks.each do |deck| %>
+      <li class="deck"><%= deck.title %></li>
+    </ul>
+  </section>
+</body>
+

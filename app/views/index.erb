@@ -1,20 +1,17 @@
-<h1>Flashcards R Us</h1>
-
+<h1 class="header"><span>Flashcards R Us</span></h1>
 <main role="main">
-<ul class="decks">
-  <% current_user %>
-  <% @decks.each do |deck| %>
-    <li class="deck-link"><a href="<%= "/games/#{deck.id}" %>"><%= deck.title %></a></li>
-    <form action="/deck/<%=deck.id%>/game" method="post">
-    <input type="hidden" name="deck_id" value="<%= deck.id %>"/>
-
-
-
-      <input type="submit" value="<%= deck.title %>">
-    </form>
-    </li>
-  <% end %>
-
-
-</ul>
+  <body>
+    <h2 class="subheader">Select a deck below to start learning</h2>
+    <ul class="decks">
+      <% current_user %>
+      <% @decks.each do |deck| %>
+        <form action="/deck/<%=deck.id%>/game" method="post">
+        <input type="hidden" name="deck_id" value="<%= deck.id %>"/>
+          <input type="submit" value="<%= deck.title %>">
+        </form>
+        </li>
+        <br>
+      <% end %>
+    </ul>
+  </body>
 </main>
