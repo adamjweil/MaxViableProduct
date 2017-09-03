@@ -13,3 +13,9 @@ end
 post '/sessions' do
   login
 end
+
+get '/users/:id' do
+  @user = User.find_by(id: params[:id])
+  @decks = Deck.order(:created_at)
+  erb :'users/profile'
+end
