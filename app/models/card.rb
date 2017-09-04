@@ -1,4 +1,4 @@
-class Flashcard < ApplicationRecord
+class Card < ApplicationRecord
   # Remember to create a migration!
   belongs_to :deck
 
@@ -16,6 +16,6 @@ class Flashcard < ApplicationRecord
   end
 
   has_many :guesses
-  
+
 
 end

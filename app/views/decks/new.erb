@@ -2,13 +2,8 @@
   <h1>Create New Deck</h1>
   <form action="/decks" method="POST">
     <label for="title">Deck Name:</label>
-    <input type="text" name="deck[title]" placeholder="Deck Name">
-    <% if logged_in? %>
-    <% find_user %>
-      <input type="hidden" name="deck[creator_id]" value="<%= current_user.id %>">
-    <% else %>
-      <input type="hidden" name="deck[creator_id]" value="0">
-    <% end %>
+    <input type="text" name="title" placeholder="Deck Name">
+
       <input type="submit" value="Create New Deck">
   </form>
 </div>
