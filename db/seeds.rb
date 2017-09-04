@@ -1,5 +1,6 @@
 User.delete_all
 Deck.delete_all
+Card.delete_all
 
 User.create(email: "email@email.com", password: "password")
 
@@ -7,6 +8,8 @@ Deck.create(title: "Ruby Enumerables", public: true)
 Deck.create(title: "Acronyms", public: true)
 Deck.create(title: "Javascript", public: true)
 Deck.create(title: "Databases", public: true)
+Deck.create(title: "Math", public: true)
+
 
 
 
@@ -39,3 +42,8 @@ Card.create(question: "List the 4 things you can do with a database: CRUD (use c
 Card.create(question: "What does SQL stand for?", answer: "structured query language", deck_id: 4)
 Card.create(question: "___(AND/OR) has precedence over ___(AND/OR)", answer: "AND, OR", deck_id: 4)
 Card.create(question: "Commands in SQL are ended with a ___", answer: ";", deck_id: 4)
+
+Card.create(question: "5 + 5", answer: "10", deck_id: 5)
+Card.create(question: "100 / 20", answer: "5", deck_id: 5)
+Card.create(question: "50 * 3", answer: "150", deck_id: 5)
+Card.create(question: "2 * 18", answer: "36", deck_id: 5)
