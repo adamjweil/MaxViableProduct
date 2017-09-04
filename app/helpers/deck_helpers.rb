@@ -1,8 +1,13 @@
 helpers do
+  # Need help with
   def create_deck
     find_user
-    @newDeck = Deck.new(name: params[:new_deck_name], public: false, user_id: @user.id)
-    @newDeck.save!
+    if logged_in? == true
+      @deck = Deck.new(name: params[:title], public: false, user_id: @user.id)
+    else
+      @deck = Deck.new(name: params[:title], public: false, user_id: 0)
+    end
+    @deck.save!
   end
 
   def create_card
