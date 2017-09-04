@@ -1,0 +1,36 @@
+<div id="game_stats">
+  <span>
+    Deck Name:
+    <%= @game.deck.title %> <br>
+  </span>
+<!-- </div>
+<div> -->
+  <span>
+    Number of guesses:
+    <%= @game.guesses.length %> <br>
+  </span>
+<!-- </div>
+<div> -->
+  <span>
+    Number of correct first guesses:
+     <!-- @game.first_guess_correct_count%>  -->
+  </span>
+  <span>
+    Date Started:
+    <% date = @game.created_at - 033000 %>
+    <%=  date.strftime("%a, %b %d %Y %I:%M:%S") %> <br>
+  </span>
+
+</div>
+<nav>
+  <ul>
+    <% find_user %>
+    <% if questions_left? %>
+      <span id="game_progress"> Game in progress:
+        <a href="/game/<%= @game.id %>/continue">continue</a>
+    </span>
+    <% else %>
+      <span id="game_progress"><strong>Game completed</strong></span>
+    <% end %>
+  </ul>
+</nav>
