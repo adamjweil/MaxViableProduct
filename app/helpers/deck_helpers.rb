@@ -1,26 +1,21 @@
 helpers do
-
   def create_deck
-    @deck = Deck.new(params[:deck])
-    if @deck.save
-      redirect "/decks/#{@deck.id}/cards/new"
-    else
-      status 422
-      @errors = @deck.errors.full_messages
-      erb :'decks/new'
-    end
+    find_user
+    @newDeck = Deck.new(name: params[:new_deck_name], public: false, user_id: @user.id)
+    @newDeck.save!
   end
 
   def create_card
-    @flashcard = Flashcard.new(params[:flashcard])
-    if @flashcard.save
-      redirect "/decks/#{@flashcard.deck_id}/cards/new"
-    else
-      status 422
-      @errors = @flashcard.errors.full_messages
-      erb :'decks/new'
-    end
+    find_recent_deck
+    @newCard = Card.new(question: params[:new_card_question], answer: params[:new_card_answer], deck_id: @most_recent_deck.id)
+    @newCard.save!
   end
 
-
+  def find_recent_deck
+    find_user
+    deck_array = Deck.select {|deck| deck.user_id == @user.id}
+    sorted_deck_array = deck_array.sort_by {|deck| deck.created_at}.reverse!
+    @most_recent_deck = sorted_deck_array.first
+    return @most_recent_deck
+  end
 end

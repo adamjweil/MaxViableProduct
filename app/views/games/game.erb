@@ -1,10 +1,10 @@
 <div class="game">
   <h1><%= @deck.title %></h1>
-  <p><%= @flashcard.question %></p>
+  <p><%= @card.question %></p>
   <form method="post" action="/guesses/<%= params[:id] %>">
-    <input type="hidden" name="card_id" value="<%= @flashcard.id %>">
+    <input type="hidden" name="card_id" value="<%= @card.id %>">
     <input type="hidden" name="deck_id" value="<%= @deck.id %>">
-    <input type="hidden" name="answer" value="<%= @flashcard.answer %>">
+    <input type="hidden" name="answer" value="<%= @card.answer %>">
     <label for="">Enter your guess:</label><br>
     <input type="text" name="guess[answer]">
     <input type="submit" value="Enter">

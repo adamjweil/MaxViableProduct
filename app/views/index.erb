@@ -1,10 +1,9 @@
 <h1>Flashcards R Us</h1>
-
+<% find_user %>
 <main role="main">
 <ul class="decks">
-  <% current_user %>
   <% @decks.each do |deck| %>
-    <li class="deck-link"><a href="<%= "/games/#{deck.id}" %>"><%= deck.title %></a></li>
+<% if (deck.public == true || deck.user_id == @user.id) %>
     <form action="/deck/<%=deck.id%>/game" method="post">
     <input type="hidden" name="deck_id" value="<%= deck.id %>"/>
 
@@ -13,6 +12,7 @@
       <input type="submit" value="<%= deck.title %>">
     </form>
     </li>
+  <% end %>
   <% end %>
 
 
