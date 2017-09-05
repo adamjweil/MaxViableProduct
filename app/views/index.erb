@@ -3,7 +3,7 @@
 <main role="main">
 <ul class="decks">
   <% @decks.each do |deck| %>
-<% if (deck.public == true || deck.user_id == @user.id) %>
+
     <form action="/deck/<%=deck.id%>/game" method="post">
     <input type="hidden" name="deck_id" value="<%= deck.id %>"/>
 
@@ -12,7 +12,7 @@
       <input type="submit" value="<%= deck.title %>">
     </form>
     </li>
-  <% end %>
+
   <% end %>
 
 
