@@ -32,6 +32,7 @@ get '/game/sessions/new' do
 end
 
 get '/users/:id/show' do
+  find_game
   @user = User.find_by(id: params[:id])
   erb :'users/show'
 end
