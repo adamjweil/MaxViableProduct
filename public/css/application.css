@@ -3,7 +3,7 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #342e37;
 }
 
 nav li {
@@ -18,7 +18,59 @@ nav li a {
     text-decoration: none;
 }
 
+
 /* Change the link color to #111 (black) on hover */
+
 nav li a:hover {
     background-color: #111;
+}
+
+body {
+    background-color: #9fd356;
+}
+
+.header {
+    font-family: "Georgia", serif;
+    font-style: oblique;
+    position: relative;
+    text-align: center;
+    width: 95%;
+    border: 25px solid #3c91e6;
+    background-color: #3c91e6;
+    padding: 10px;
+    margin: 25px;
+    color: #fafffd;
+}
+
+.subheader {
+    font-family: "Georgia", serif;
+    font-size: 80%;
+    font-style: oblique;
+    text-align: center;
+}
+
+.decks {
+    display: inline-block;
+    height: 2em;
+    width: 100px;
+    padding: 2em;
+}
+
+input[type="submit"]:hover {
+    background-color: #fa824c;
+    border: none;
+    color: white;
+    position: relative;
+    font-family: "Georgia", serif;
+    margin: 50px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
