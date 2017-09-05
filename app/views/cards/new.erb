@@ -1,12 +1,12 @@
 <div class="new_cards">
   <h1>Add Cards to Deck</h1>
-  <form action="/cards" method="POST">
+  <form action="/deck/<%=@deck.id%>/cards/new/temp2" method="POST">
     <label for="question">Question:</label>
-    <input type="text" name="flashcard[question]" placeholder="Question">
+    <input type="text" name="new_card_question" placeholder="Question">
 
     <label for="question">Answer:</label>
-    <input type="text" name="flashcard[answer]" placeholder="Answer">
-    <input type="hidden" name="flashcard[deck_id]" value="<%= @deck.id %>">
+    <input type="text" name="new_card_answer" placeholder="Answer">
+    <input type="hidden" name="deck_id" value="<%=@deck.id%>">
       <input type="submit" value="Submit">
       <a href="/">Done</a>
   </form>

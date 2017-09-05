@@ -6,12 +6,13 @@
         <% if logged_in? %>
         <% find_user %>
             <li><a href="/">Home</a></li>
-            <li><a href="/users/">Profile</a></li>
+            <li><a href="/games/stats">Profile</a></li>
             <li><a href="/decks/new">New Deck</a></li>
             <li><a href="/logout">Logout</a></li>
           <% else %>
             <li><a href="/">Home</a></li>
             <li><a href="/users/new">Register</a></li>
+            <li><a href="/decks/new">New Deck</a></li>
             <li><a href="/sessions/new">Log In</a></li>
           <% end %>
         </ul>

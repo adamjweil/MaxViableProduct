@@ -7,10 +7,16 @@ post '/users' do
   redirect '/sessions/new'
 end
 
-get '/users/logout' do
-  session[:id] = nil
-  @user = nil
-  redirect '/sessions/new'
+delete '/logout' do
+  # session[:user_id] = nil
+  session.delete(:user_id)
+  redirect '/'
+end
+
+get '/logout' do
+  # session[:user_id] = nil
+  session.delete(:user_id)
+  redirect '/'
 end
 
 get '/sessions/new' do
