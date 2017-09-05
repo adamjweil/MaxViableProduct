@@ -2,7 +2,7 @@
 
 ## team: Maximum Viable Product
 
-### memders: adam, sam and simon
+### members: adam, sam and simon
 
 # Homepage
 
